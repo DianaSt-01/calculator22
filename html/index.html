@@ -7,10 +7,11 @@
   <title> Калькулятор1 </title>
 </head>>
 
+
 <style>
   .button-wrapper {
-    width: 24.62px;
-    height: 16.86px;
+    width: 25px;
+    height: 17px;
     background: linear-gradient(180deg, #18476B -5.2%, #2771AA 45.84%, #081925 119.3%);
     border-radius: 1px;
     display: flex;
@@ -23,8 +24,8 @@
     padding: 0;
     border: none;
     background-color: transparent;
-    width: 22.48px;
-    height: 15.39px;
+    width: 23px;
+    height: 15px;
     background: linear-gradient(175.68deg, #328CD0 19.86%, #081925 270.14%);
     border-radius: 2px;
 
@@ -37,290 +38,359 @@
     background: linear-gradient(0deg, #4EA4DC -874.3%, #2BAFDE 180.3%);
     transform: skew(-2deg, -.5deg);
     transform-origin: bottom right;
+    display: flex;
+
+    justify-content: center;
 
   }
 
   .calculator {
-    height: 187.01;
-    width: 129.9;
     user-select: none;
-    background:linear-gradient(180deg, #18476B -5.2%, #2771AA 45.84%, #081925 119.3%);
+    background: linear-gradient(180deg, #4EA4DC 51.6%, #081925 161.2%);
+    border-radius: 5px;
+
+
+    padding-top: 27px;
+    /*padding-bottom: 11px;*/
+    padding-left: 9px;
+    padding-right: 9px;
+    display: inline-block;
+  
+
+  }
+ 
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .knopki {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4px;
+  }
+
+  .column1 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3px;
+  }
+
+  .column2 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3px;
+  }
+
+  .column3 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3px;
+  }
+
+  .column4 {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3px;
+  }
+
+
+
+  .calc-content{
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(0deg, #4EA4DC -874.3%, #2BAFDE 180.3%);
+    /*transform: skew(-2deg, -.5deg);*/
+    transform-origin: bottom right;
+    display: flex;
+    justify-content: center;
+  
+
+  }
+  .calc{
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    width: 128px;
+    height: 200px;
+    background: linear-gradient(175.68deg, #328CD0 19.86%, #081925 270.14%);
+    border-radius: 2px;
+  }
+  .calc-wrapper{
+    width: 130px;
+    height: 202px;
+   background: linear-gradient(180deg, #2771AA -3.6%, #081925 71.1%);
     border-radius: 1px;
     display: flex;
     align-items: center;
     justify-content: center;
-    display: grid;
-    grid-template-rows: 1fr 1fr ;
-    grid-gap: 7.1px;
+    transform: skew(-2deg, -.5deg);
+    transform-origin: bottom right;
+    
   }
-  .knopki{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 4.19px;
-  }  
-  .column1{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 3.34px;
-  }
-  .column2{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 3.34px;
-  }
-  .column3{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 3.34px;
-  }
-  .column4{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 3.34px;
-  }
+  textarea { 
 
-  .screen {
-    width: 107.3;
-    height: 45.9;
-    text-align: right;
-  
-  }
+    resize: none;
+     }
+
   
 </style>
 
 <body>
-  <div class="calculator">
-    <div class="screen"> <img src="../img/svg/Vector.svg" alt="vec" class="vek"> </div>
-    <div class="knopki">
-      <div class="column1">
+  <div class="calc-wrapper">
+    <div class="calc">
+      <div class="calc-content">
+        <div class="calculator">
+          <div class="screen"><textarea id=inputVal>0</textarea> </div>
 
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/o.svg" alt="sev" class="sevv">
-              </div>
-            </div>
-          </button>
-        </div>
+          <div class="knopki">
+            <div class="column1">
 
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/m.svg" alt="sev" class="sevv">
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container" >
+                      <img src="../img/svg/o.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/f.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/f.svg" alt="sev" class="sevv">
+                    </div>
+                  </div>
+                </button>
               </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/seven.svg" alt="sev" class="sevv">
-              </div>
-            </div>
-          </button>
-        </div>
 
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container">
-                <img src="../img/svg/four.svg" alt="fo" class=foo>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/m.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/r.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/c.svg" alt="sev" class="sevv">
+                    </div>
+                  </div>
+                </button>
               </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/one.svg" alt="onee" class="oneee">
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/seven.svg" alt="sev" class="sevv">
+                    </div>
+                  </div>
+                </button>
               </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/zero.svg" alt="zer" class="ze">
-              </div>
-            </div>
-          </button>
-        </div>
-      </div>
 
-
-      <div class="column2">
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/pai.svg" alt="sev" class="sevv">
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/four.svg" alt="fo" class=foo>
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/one.svg" alt="onee" class="oneee">
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/zero.svg" alt="zer" class="ze">
+                    </div>
+                  </div>
+                </button>
               </div>
             </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/m.svg" alt="sev" class="sevv">
-              </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/eight.svg" alt="eigh" class="eighr">
-              </div>
-            </div>
-          </button>
-        </div>
-
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container">
-                <img src="../img/svg/five.svg" alt="fi" class=fvo>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/two.svg" alt="tw" class="tw">
-              </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/dot.svg" alt="do" class="ddo">
-              </div>
-            </div>
-          </button>
-        </div>
-      </div>
 
 
-      <div class="column3">
+            <div class="column2">
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/litplus.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/pai.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/litmin.svg" alt="sev" class="sevv">
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/m.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/litmin.svg" alt="sev" class="sevv">
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/eight.svg" alt="eigh" class="eighr">
+                    </div>
+                  </div>
+                </button>
+              </div>
 
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/root.svg" alt="sev" class="sevv">
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/five.svg" alt="fi" class=fvo>
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/two.svg" alt="tw" class="tw">
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/dot.svg" alt="do" class="ddo">
+                    </div>
+                  </div>
+                </button>
               </div>
             </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/m.svg" alt="sev" class="sevv">
-              </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/nine.svg" alt="eigh" class="eighr">
-              </div>
-            </div>
-          </button>
-        </div>
 
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container">
-                <img src="../img/svg/six.svg" alt="fi" class=fvo>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/three.svg" alt="tw" class="tw">
-              </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/equa.svg" alt="do" class="ddo">
-              </div>
-            </div>
-          </button>
-        </div>
-      </div>
-      <div class="column4">
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/pai.svg" alt="sev" class="sevv">
-              </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/pai.svg" alt="sev" class="sevv">
-              </div>
-            </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/multiply.svg" alt="eigh" class="eighr">
-              </div>
-            </div>
-          </button>
-        </div>
 
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container">
-                <img src="../img/svg/minus.svg" alt="fi" class=fvo>
+            <div class="column3">
+
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/root.svg" alt="sev" class="sevv">
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/m.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/litplus.svg" alt="sev" class="sevv">
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/nine.svg" alt="eigh" class="eighr">
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/six.svg" alt="fi" class=fvo>
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/three.svg" alt="tw" class="tw">
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/equa.svg" alt="do" class="ddo">
+                    </div>
+                  </div>
+                </button>
               </div>
             </div>
-          </button>
-        </div>
-        <div class="button-wrapper">
-          <button class="button">
-            <div class="button-container-wrapper">
-              <div class="button-container" >
-                <img src="../img/svg/plus.svg" alt="tw" class="plus">
+            <div class="column4">
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/degree.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/pai.svg" alt="sev" class="sevv">
+                      <img src="../img/svg/degree.svg" alt="sev" class="sevv">
+                    </div>
+                  </div>
+                </button>
               </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/pai.svg" alt="sev" class="sevv">
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/multiply.svg" alt="eigh" class="eighr">
+                    </div>
+                  </div>
+                </button>
+              </div>
+
+              <div class="button-wrapper">
+                <button class="button">
+                  <div class="button-container-wrapper">
+                    <div class="button-container" onclick="insert('-')">
+                      <img src="../img/svg/minus.svg" alt="fi" class=fvo>
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div class="button-wrapper plus">
+                <button class="button plus">
+                  <div class="button-container-wrapper">
+                    <div class="button-container">
+                      <img src="../img/svg/plus.svg" alt="tw"  class="plus">
+                    </div>
+                  </div>
+                </button>
+              </div>
+
             </div>
-          </button>
+          </div>
         </div>
-        
       </div>
     </div>
   </div>
+  <script>
+
+  </script>
 
 </body>
 
