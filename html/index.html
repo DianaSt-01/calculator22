@@ -19,6 +19,8 @@
     justify-content: center;
 
   }
+ 
+ 
 
   .button {
     padding: 0;
@@ -47,18 +49,16 @@
   .calculator {
     user-select: none;
     background: linear-gradient(180deg, #4EA4DC 51.6%, #081925 161.2%);
-    border-radius: 5px;
-
-
+    border-radius: 8px;
     padding-top: 27px;
-    /*padding-bottom: 11px;*/
+    padding-bottom: 11px;
     padding-left: 9px;
     padding-right: 9px;
     display: inline-block;
-  
+
 
   }
- 
+
 
   .button-container {
     display: flex;
@@ -91,51 +91,47 @@
 
   .column4 {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr 0;
     grid-gap: 3px;
   }
+.plus{
+  height: 38px;
+
+}
 
 
 
-  .calc-content{
-    width: 100%;
-    height: 100%;
-    border-radius: 2px;
-    background: linear-gradient(0deg, #4EA4DC -874.3%, #2BAFDE 180.3%);
-    /*transform: skew(-2deg, -.5deg);*/
-    transform-origin: bottom right;
-    display: flex;
-    justify-content: center;
-  
-
-  }
-  .calc{
+  .calc {
     padding: 0;
     border: none;
-    background-color: transparent;
-    width: 128px;
-    height: 200px;
+    width: 133px;
+    display: inline-flex;
     background: linear-gradient(175.68deg, #328CD0 19.86%, #081925 270.14%);
-    border-radius: 2px;
+    border-radius: 8px;
   }
-  .calc-wrapper{
-    width: 130px;
-    height: 202px;
-   background: linear-gradient(180deg, #2771AA -3.6%, #081925 71.1%);
-    border-radius: 1px;
+
+  .calc-wrapper {
+    width: 135px;
+    height: 200px;
+    background: linear-gradient(180deg, #2771AA -3.6%, #081925 71.1%);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: skew(-2deg, -.5deg);
-    transform-origin: bottom right;
-    
+    /*transform: skew(-2deg, -.5deg);
+     transform-origin: bottom right;*/
   }
-  textarea { 
 
+
+
+  textarea {
     resize: none;
-     }
-
-  
+    margin-bottom: 6px;
+    border: solid;
+    border-width: 1px;
+    border-color: #1A5C88;
+    border-radius: 3px;
+  }
 </style>
 
 <body>
@@ -143,15 +139,20 @@
     <div class="calc">
       <div class="calc-content">
         <div class="calculator">
-          <div class="screen"><textarea id=inputVal>0</textarea> </div>
-
+          <div class="screen-wrapper">
+            <div class="screenik">
+              <div class="screen-content">
+                <div class="screen"><textarea name="comment" cols="13" rows="1"></textarea> </div>
+              </div>
+            </div>
+          </div>
           <div class="knopki">
             <div class="column1">
 
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container" >
+                    <div class="button-conetainer">
                       <img src="../img/svg/o.svg" alt="sev" class="sevv">
                       <img src="../img/svg/f.svg" alt="sev" class="sevv">
                       <img src="../img/svg/f.svg" alt="sev" class="sevv">
@@ -366,7 +367,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container" onclick="insert('-')">
+                    <div class="button-container">
                       <img src="../img/svg/minus.svg" alt="fi" class=fvo>
                     </div>
                   </div>
@@ -376,7 +377,7 @@
                 <button class="button plus">
                   <div class="button-container-wrapper">
                     <div class="button-container">
-                      <img src="../img/svg/plus.svg" alt="tw"  class="plus">
+                      <img src="../img/svg/plus.svg" height="10" width="10"  alt="tw" class="plus">
                     </div>
                   </div>
                 </button>
