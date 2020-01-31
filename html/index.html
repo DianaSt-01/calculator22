@@ -19,8 +19,8 @@
     justify-content: center;
 
   }
- 
- 
+
+
 
   .button {
     padding: 0;
@@ -41,7 +41,6 @@
     transform: skew(-2deg, -.5deg);
     transform-origin: bottom right;
     display: flex;
-
     justify-content: center;
 
   }
@@ -94,10 +93,11 @@
     grid-template-rows: 1fr 1fr 1fr 1fr 2fr 0;
     grid-gap: 3px;
   }
-.plus{
-  height: 38px;
 
-}
+  .plus {
+    height: 38px;
+
+  }
 
 
 
@@ -142,7 +142,7 @@
           <div class="screen-wrapper">
             <div class="screenik">
               <div class="screen-content">
-                <div class="screen"><textarea name="comment" cols="13" rows="1"></textarea> </div>
+                <div class="screen"><textarea name="comment" maxlength="14" cols="13" rows="1"></textarea> </div>
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-conetainer">
+                    <div class="button-container" onclick="clean()">
                       <img src="../img/svg/o.svg" alt="sev" class="sevv">
                       <img src="../img/svg/f.svg" alt="sev" class="sevv">
                       <img src="../img/svg/f.svg" alt="sev" class="sevv">
@@ -175,7 +175,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="7" onclick="pressNumber(7)">
                       <img src="../img/svg/seven.svg" alt="sev" class="sevv">
                     </div>
                   </div>
@@ -185,7 +185,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="4" onclick="pressNumber(4)">
                       <img src="../img/svg/four.svg" alt="fo" class=foo>
                     </div>
                   </div>
@@ -194,7 +194,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="1" onclick="pressNumber(1)">
                       <img src="../img/svg/one.svg" alt="onee" class="oneee">
                     </div>
                   </div>
@@ -203,7 +203,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="0" onclick="pressNumber(0)">
                       <img src="../img/svg/zero.svg" alt="zer" class="ze">
                     </div>
                   </div>
@@ -237,7 +237,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="8" onclick="pressNumber(8)">
                       <img src="../img/svg/eight.svg" alt="eigh" class="eighr">
                     </div>
                   </div>
@@ -247,7 +247,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="5" onclick="pressNumber(5)">
                       <img src="../img/svg/five.svg" alt="fi" class=fvo>
                     </div>
                   </div>
@@ -256,7 +256,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="2" onclick="pressNumber(2)">
                       <img src="../img/svg/two.svg" alt="tw" class="tw">
                     </div>
                   </div>
@@ -265,7 +265,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="pressOpp('.')">
                       <img src="../img/svg/dot.svg" alt="do" class="ddo">
                     </div>
                   </div>
@@ -279,7 +279,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="rooot()">
                       <img src="../img/svg/root.svg" alt="sev" class="sevv">
                     </div>
                   </div>
@@ -298,7 +298,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="9" onclick="pressNumber(9)">
                       <img src="../img/svg/nine.svg" alt="eigh" class="eighr">
                     </div>
                   </div>
@@ -308,7 +308,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="6" onclick="pressNumber(6)">
                       <img src="../img/svg/six.svg" alt="fi" class=fvo>
                     </div>
                   </div>
@@ -317,7 +317,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" button-value="3" onclick="pressNumber(3)">
                       <img src="../img/svg/three.svg" alt="tw" class="tw">
                     </div>
                   </div>
@@ -326,7 +326,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="equal()">
                       <img src="../img/svg/equa.svg" alt="do" class="ddo">
                     </div>
                   </div>
@@ -337,7 +337,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="pressOpp('%')">
                       <img src="../img/svg/degree.svg" alt="sev" class="sevv">
                       <img src="../img/svg/pai.svg" alt="sev" class="sevv">
                       <img src="../img/svg/degree.svg" alt="sev" class="sevv">
@@ -348,7 +348,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="pressOpp('/')">
                       <img src="../img/svg/pai.svg" alt="sev" class="sevv">
                     </div>
                   </div>
@@ -357,7 +357,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="pressOpp('*')">
                       <img src="../img/svg/multiply.svg" alt="eigh" class="eighr">
                     </div>
                   </div>
@@ -367,7 +367,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="pressOpp('-')">
                       <img src="../img/svg/minus.svg" alt="fi" class=fvo>
                     </div>
                   </div>
@@ -376,8 +376,8 @@
               <div class="button-wrapper plus">
                 <button class="button plus">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
-                      <img src="../img/svg/plus.svg" height="10" width="10"  alt="tw" class="plus">
+                    <div class="button-container" onclick="pressOpp('+')">
+                      <img src="../img/svg/plus.svg" height="10" width="10" alt="tw" class="plus">
                     </div>
                   </div>
                 </button>
@@ -390,6 +390,42 @@
     </div>
   </div>
   <script>
+    var tr = document.querySelector("textarea");
+    function pressNumber(num) {
+      tr.value = tr.value + num;
+
+      debugger;
+    }
+    function pressOpp(opper) {
+      tr.value = tr.value + opper;
+    }
+    function clean() {
+      tr.value = '';
+    }
+    function equal() {
+      var srt = document.querySelector("textarea").value;
+      if (srt) {
+        document.querySelector("textarea").value = eval(srt);
+      }
+    }
+    function rooot(){
+      document.querySelector("textarea").value=Math.sqrt(tr.value);
+    }
+    function mrc(){
+
+    }
+    function prozent(){
+
+    }
+    function plusMinus(){
+
+    }
+    function minm(){
+
+    }
+    function maxm(){
+      
+    }
 
   </script>
 
