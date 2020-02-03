@@ -163,7 +163,7 @@
 
               <div class="button-wrapper">
                 <button class="button">
-                  <div class="button-container-wrapper" >
+                  <div class="button-container-wrapper">
                     <div class="button-container" onclick="mrc()">
                       <img src="../img/svg/m.svg" alt="sev" class="sevv">
                       <img src="../img/svg/r.svg" alt="sev" class="sevv">
@@ -337,7 +337,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container" onclick="pressOpp('%')">
+                    <div class="button-container" onclick="prozent()">
                       <img src="../img/svg/degree.svg" alt="sev" class="sevv">
                       <img src="../img/svg/pai.svg" alt="sev" class="sevv">
                       <img src="../img/svg/degree.svg" alt="sev" class="sevv">
@@ -475,9 +475,27 @@
     }
     function mrc() {
       tr.value = memory;
-      
+
     }
     function prozent() {
+      srt = tr.value;
+      var re = /['+'\-'*'\/]/;
+      var chis = srt.split(re);
+      var re2 = /\d+/;
+      var newList = srt.split(re2);
+      newList = newList.filter(op => op != "" && op != NaN);
+      chis = chis.filter(num => num != "" && num != NaN);
+
+      var percent = parseFloat(chis[0]) * (parseFloat(chis[1]) / 100);
+      var result = 0;
+      switch (newList[0]) {
+        case "+": result = parseFloat(chis[0]) + percent; break;
+        case "-": result = parseFloat(chis[0]) - percent; break;
+        case "*": result = percent; break;
+        case "/": result = parseFloat(chis[0]) / (parseFloat(chis[1]) / 100); break;
+      }
+      tr.value = result;
+debugger
 
     }
     function plusMinus() {
@@ -489,7 +507,7 @@
     }
     function maxm() {
       memory += parseFloat(tr.value);
-     
+
     }
 
 
