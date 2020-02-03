@@ -163,8 +163,8 @@
 
               <div class="button-wrapper">
                 <button class="button">
-                  <div class="button-container-wrapper">
-                    <div class="button-container">
+                  <div class="button-container-wrapper" >
+                    <div class="button-container" onclick="mrc()">
                       <img src="../img/svg/m.svg" alt="sev" class="sevv">
                       <img src="../img/svg/r.svg" alt="sev" class="sevv">
                       <img src="../img/svg/c.svg" alt="sev" class="sevv">
@@ -216,7 +216,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="plusMinus()">
                       <img src="../img/svg/litplus.svg" alt="sev" class="sevv">
                       <img src="../img/svg/pai.svg" alt="sev" class="sevv">
                       <img src="../img/svg/litmin.svg" alt="sev" class="sevv">
@@ -227,7 +227,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="minm()">
                       <img src="../img/svg/m.svg" alt="sev" class="sevv">
                       <img src="../img/svg/litmin.svg" alt="sev" class="sevv">
                     </div>
@@ -288,7 +288,7 @@
               <div class="button-wrapper">
                 <button class="button">
                   <div class="button-container-wrapper">
-                    <div class="button-container">
+                    <div class="button-container" onclick="maxm()">
                       <img src="../img/svg/m.svg" alt="sev" class="sevv">
                       <img src="../img/svg/litplus.svg" alt="sev" class="sevv">
                     </div>
@@ -390,11 +390,10 @@
     </div>
   </div>
   <script>
+    var memory = 0;
     var tr = document.querySelector("textarea");
     function pressNumber(num) {
       tr.value = tr.value + num;
-
-      debugger;
     }
     function pressOpp(opper) {
       tr.value = tr.value + opper;
@@ -403,29 +402,96 @@
       tr.value = '';
     }
     function equal() {
-      var srt = document.querySelector("textarea").value;
-      if (srt) {
-        document.querySelector("textarea").value = eval(srt);
+
+      var srt = tr.value;
+      /* if (srt) {
+         document.querySelector("textarea").value = eval(srt);
+       }*/
+
+      var re = /['+'\-'*'\/]/;
+      var chis = srt.split(re);
+      var re2 = /\d+/;
+      var newList = srt.split(re2);
+      newList = newList.filter(op => op != "" && op != NaN);
+      chis = chis.filter(num => num != "" && num != NaN);
+      var index = Prioritet(newList);
+      chis = Valera(chis, index);
+      newList = newList.filter(op => op != "*" && op != "/");
+
+      var result = chis[0];
+      if (newList.length != 0) {
+        for (i = 0; i < newList.length; i++) {
+          if (newList[i] == "+") {
+            chis[i + 1] = (parseFloat(chis[i]) + parseFloat(chis[i + 1])).toString();
+            result = parseFloat(chis[i + 1]);
+          }
+          else {
+            chis[i + 1] = (Number(chis[i]) - Number(chis[i + 1])).toString();
+            result = Number(chis[i + 1]);
+          }
+        }
       }
-    }
-    function rooot(){
-      document.querySelector("textarea").value=Math.sqrt(tr.value);
-    }
-    function mrc(){
+
+      if (srt) {
+        tr.value = result;
+      }
 
     }
-    function prozent(){
-
+    function Prioritet(newList) {
+      var index = new Set();
+      for (var i = 0; i < newList.length; i++) {
+        if (newList[i] == "*") {
+          index.add(i.toString());
+        }
+        else if (newList[i] == "/") {
+          if (i == 0) {
+            index.add("");
+            continue;
+          }
+          index.add((-i).toString());
+        }
+      }
+      return Array.from(index);
     }
-    function plusMinus(){
-
+    function Valera(chis, index) {
+      var ind;
+      for (i = 0; i < index.length; i++) {
+        if (Number(index[i]) < 0 || index[i] == "") {
+          ind = -Number(index[i]);
+          chis[ind + 1] = (Number(chis[ind]) / Number(chis[ind + 1])).toString();
+          chis[ind] = "a";
+        }
+        else {
+          ind = Number(index[i]);
+          chis[ind + 1] = (Number(chis[ind]) * Number(chis[ind + 1])).toString();
+          chis[ind] = "a";
+        }
+      }
+      return chis.filter(num => num != "a");
     }
-    function minm(){
 
+    function rooot() {
+      tr.value = Math.sqrt(tr.value);
     }
-    function maxm(){
+    function mrc() {
+      tr.value = memory;
       
     }
+    function prozent() {
+
+    }
+    function plusMinus() {
+      tr.value = parseFloat(tr.value) * (-1);
+    }
+
+    function minm() {
+      memory -= parseFloat(tr.value);
+    }
+    function maxm() {
+      memory += parseFloat(tr.value);
+     
+    }
+
 
   </script>
 
